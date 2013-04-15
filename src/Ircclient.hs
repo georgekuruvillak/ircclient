@@ -18,3 +18,17 @@ isQuit:: String -> Bool
 
 isQuit s = (s == "~quit") 
 
+{- removeTilde  removes the paded ~ for irc commands and ~~ for nickserver commands -}
+
+removeTilde::String->String
+
+removeTilde (x:xs) | (x =='~') = xs
+				   | otherwise = (x:xs)
+
+{-isTilde checks if the command is a nickserv command or irc command or message  -}
+
+isTilde::String->Bool
+
+isTilde (x:xs)     | (x =='~') = True
+				   | otherwise = False
+
