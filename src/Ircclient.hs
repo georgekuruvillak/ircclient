@@ -136,6 +136,14 @@ identify h x = case (head x) of
 											x<-getLine
 											identify h x
 
+speaking::Handle->IO()
 
+			{-speaking thread that accepts user input-}					
+
+speaking h = 	do
+					str<-getLine
+					when (not $ isQuit str) $ do 
+													write h (parseCmd' str)
+													speaking h
 			 
 
