@@ -1,0 +1,16 @@
+Project Info
+------------
+
+Title of the project - IRC client
+
+Advisor: Dr Piyush K Kurur
+
+Url to your darcs/git repository - 
+
+Member details (name, rollno)
+----------------------------
+Ravi Teja(12111026), 
+George Kuruvilla (12111024), 
+Dhaval Joshi (12111021), 
+Prasanna Ramalingam (12111055), 
+Roopesh Kesav (12111056)
