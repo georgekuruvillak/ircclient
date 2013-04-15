@@ -1,0 +1,4 @@
+ircclient
+=========
+
+IRC chat client
