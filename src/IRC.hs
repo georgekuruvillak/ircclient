@@ -22,6 +22,16 @@ main = forever $ do
 					nick <- getLine
 					write h ("NICK "++nick)
 					
+					print "Is this your registered nick :"
+					resp <- getLine
+					identify h resp
 					
+					write h ("USER "++nick++" 0 * :tutorial bot")
+					write h ("JOIN "++chan) 
+					
+					thr1 <- forkIO (listen h);					
+					speaking h;
+					
+					killThread thr1;
 					hClose h;
 						
