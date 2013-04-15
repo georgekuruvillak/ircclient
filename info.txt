@@ -5,7 +5,7 @@ Title of the project - IRC client
 
 Advisor: Dr Piyush K Kurur
 
-Url to your darcs/git repository - 
+Url to your darcs/git repository - https://github.com/georgekuruvillak/ircclient
 
 Member details (name, rollno)
 ----------------------------
