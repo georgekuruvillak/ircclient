@@ -112,3 +112,27 @@ getPassword = do
 
 
 
+withEcho :: Bool -> IO a -> IO a
+
+withEcho echo action = do
+				  old <- hGetEcho stdin
+				  bracket_ (hSetEcho stdin echo) (hSetEcho stdin old) action
+
+{-identify captures the identity of the user or gives the user a temporary usage -}
+
+identify::Handle->String->IO()
+				
+identify h x = case (head x) of 
+								'y' -> do 
+										printf "Enter password : \n"
+										pass <- getPassword
+										write h ("NickServ IDENTIFY " ++ pass);
+								'n' -> do 
+										printf "Then you should get one \n"
+										threadDelay 5000
+								
+								_   ->do
+											printf "Invalid entry give yes/no \n"
+											x<-getLine
+											identify h x
+
